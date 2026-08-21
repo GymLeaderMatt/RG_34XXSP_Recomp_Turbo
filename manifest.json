@@ -1,0 +1,17 @@
+{
+  "id": "turbo_hotkeys",
+  "name": "G1R TurboHotkeys Mod",
+  "version": "1.2.0",
+  "api": 2,
+  "entry": "main.lua",
+  "profile": "content",
+  "category": "Input",
+  "game_version": ">=0.0.0-0 <2.0.0",
+  "priority": 45,
+  "affects_link": false,
+  "permissions": [],
+  "dependencies": [],
+  "optional_dependencies": [],
+  "conflicts": [],
+  "description": "Adds TURBO A, TURBO B, SAVE, LOAD and a second SELECT as rebindable rows on the game's own CONTROLS screen, and swaps the pad's A and B. Turbo mashes up to once per fixed step (60/s) with no added latency. Frees the shoulders and triggers from GAME SPEED so L1/R1/L2/R2 can be bound at all."
+}

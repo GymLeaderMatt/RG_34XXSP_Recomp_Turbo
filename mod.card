@@ -1,0 +1,31 @@
+-- Sharing metadata.  Read by tooling and the manager detail pane; never by
+-- the loader's merge.
+return {
+  summary = "G1R TurboHotkeys Mod — turbo A/B, save/load on any button, and a pad A/B swap.",
+  author = "WizzStar",
+  tags = { "qol", "input", "turbo", "controls", "savestate", "handheld", "g1r" },
+  differences = {
+    changed = {
+      "A and B are swapped on the pad (SWAP A/B option, on by default); keyboard bindings are untouched",
+      "Shoulders and triggers no longer cycle GAME SPEED, which is what made them bindable (stock returns before Input ever sees them)",
+      "CONTROLS gains five rows below SELECT; the list scrolls past its six visible rows",
+    },
+    added = {
+      "TURBO A / TURBO B — hold to mash, one press per fixed step at the default rate (defaults X and L1)",
+      "ALT SEL — a second real source for the GB select button, default Y, alongside the physical Select",
+      "SAVE / LOAD — the F1 quicksave and F2 quickload on a bindable button",
+      "Mod options: turbo on/off, turbo rate, swap A/B, free shoulders, save/load on/off, hold-to-load, on-screen message",
+    },
+    known = {
+      "Turbo issues a wasPressed edge with no held state, so anything that tests isDown rather than wasPressed will not see it.",
+      "At 60/s, turbo A will run straight through YES/NO prompts and naming screens. Lower the rate or release the button for those.",
+      "LOAD is the real save file, not a savestate: it cannot rewind a battle, and it hard-teleports like CONTINUE.",
+      "SAVE defaults to leftstick (L3). A handheld without a clickable stick needs that row rebound once.",
+      "Keyboard 1 still cycles GAME SPEED; only the pad shoulders and triggers are freed.",
+      "The A/B swap is a default-level swap: binding A or B by hand on CONTROLS disengages it for both rows, so the screen and the hardware can never disagree.",
+      "The swap does not reach the display chords or the A+B+START soft reset, which read the pad by position rather than through the binding map.",
+    "ALT SEL is select in full, so holding Y and pressing a face button hits the display chords exactly as the real Select button does.",
+    },
+  },
+  compat = { engine = ">=1.0.0 <2.0.0", modApi = 2 },
+}
